@@ -1,0 +1,99 @@
+/* Frappe HR Documentation - Sidebar */
+
+.sidebar-nav {
+  padding: 2px 0;
+}
+
+.sidebar-group {
+  margin: 2px 0;
+}
+
+.sidebar-group-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-gray-9);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.sidebar-group-btn:hover {
+  background-color: var(--surface-gray-2);
+}
+
+.sidebar-arrow {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  color: var(--ink-gray-4);
+  transition: transform var(--transition-fast) ease;
+  flex-shrink: 0;
+}
+
+.sidebar-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.sidebar-group-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-children {
+  margin-left: 14px;
+  padding-left: 8px;
+  border-left: 1px solid var(--outline-gray-2);
+  overflow: hidden;
+  display: none; /* Controlled by JS */
+  margin-top: 2px;
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-item {
+  display: flex;
+}
+
+.sidebar-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--ink-gray-7);
+  text-decoration: none;
+  transition: all var(--transition-fast) ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-link:hover {
+  background-color: var(--surface-gray-2);
+}
+
+.sidebar-link.active {
+  background-color: var(--surface-selected);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink-gray-9);
+}
+
+.sidebar-link-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

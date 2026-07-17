@@ -1,0 +1,137 @@
+/* Frappe HR Documentation - Main Content Area */
+
+/* Page Header (Title + Edit Button) */
+.page-header {
+  padding: 24px 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--outline-gray-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--ink-gray-9);
+  margin: 0;
+}
+
+/* Edit Button Group */
+.edit-btn-group {
+  display: inline-flex;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--outline-gray-2);
+  overflow: hidden;
+  background-color: var(--surface-white);
+}
+
+.edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-gray-7);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.edit-btn:hover {
+  background-color: var(--surface-gray-1);
+}
+
+.edit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.edit-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  color: var(--ink-gray-5);
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid var(--outline-gray-2);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.edit-dropdown-btn:hover {
+  background-color: var(--surface-gray-1);
+}
+
+.edit-dropdown-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast) ease;
+}
+
+/* Page Footer/Meta */
+.page-meta {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .page-meta {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.last-updated {
+  font-size: var(--text-sm);
+  color: var(--ink-gray-5);
+}
+
+/* Feedback Widget Placeholder */
+.feedback-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .feedback-widget {
+    align-items: flex-end;
+  }
+}
+
+.feedback-prompt {
+  font-size: var(--text-sm);
+  color: var(--ink-gray-5);
+}
+
+.feedback-options {
+  display: inline-flex;
+  background-color: var(--surface-gray-2);
+  padding: 2px;
+  border-radius: var(--radius-full);
+}
+
+.feedback-btn {
+  padding: 6px;
+  border-radius: var(--radius-full);
+  color: var(--ink-gray-5);
+  transition: all var(--transition-fast) ease;
+}
+
+.feedback-btn:hover {
+  background-color: var(--surface-gray-4);
+}
+
+.feedback-btn svg {
+  width: 16px;
+  height: 16px;
+}

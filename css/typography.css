@@ -1,0 +1,151 @@
+/* Frappe HR Documentation - Typography (Prose) */
+
+.wiki-content {
+  color: var(--tw-prose-body);
+  max-width: 100%;
+  font-size: var(--text-base);
+  line-height: 1.7142857;
+}
+
+.wiki-content p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.wiki-content h2 {
+  font-size: 1.5em; /* ~19.5px */
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: var(--tw-prose-headings);
+  line-height: 1.3333333;
+}
+
+.wiki-content h3 {
+  font-size: 1.25em; /* ~16px */
+  font-weight: 600;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  color: var(--tw-prose-headings);
+  line-height: 1.6;
+}
+
+.wiki-content h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--tw-prose-headings);
+  line-height: 1.5;
+}
+
+.wiki-content a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+  text-decoration-color: var(--tw-prose-links);
+}
+
+.wiki-content img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--outline-gray-2);
+  box-shadow: var(--shadow-sm);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.wiki-content strong {
+  font-weight: 600;
+  color: var(--tw-prose-bold);
+}
+
+.wiki-content ul {
+  list-style-type: disc;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.wiki-content ol {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.wiki-content li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.wiki-content blockquote {
+  border-left: 3px solid var(--tw-prose-quote-borders);
+  padding-left: 1em;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+}
+
+.wiki-content code {
+  font-size: 0.875em;
+  font-weight: 600;
+  background-color: var(--surface-gray-2);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--tw-prose-code);
+}
+
+.wiki-content pre {
+  background-color: var(--tw-prose-pre-bg);
+  color: var(--tw-prose-pre-code);
+  padding: 1rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+}
+
+.wiki-content pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.wiki-content img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--outline-gray-1);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.wiki-content table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.wiki-content th {
+  font-weight: 600;
+  padding: 0.5em 0.75em;
+  border-bottom: 2px solid var(--tw-prose-th-borders);
+}
+
+.wiki-content td {
+  padding: 0.5em 0.75em;
+  border-bottom: 1px solid var(--tw-prose-td-borders);
+}
+
+.wiki-content hr {
+  border-top: 1px solid var(--tw-prose-hr);
+  margin-top: 3em;
+  margin-bottom: 3em;
+}

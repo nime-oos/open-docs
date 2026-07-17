@@ -1,0 +1,135 @@
+/* Frappe HR Documentation - Design Tokens */
+:root {
+  /* Font Family */
+  --font-sans: 'InterVar', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Text Sizes */
+  --text-2xs: 12px;
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Gray Color Scale */
+  --color-gray-50: #F8F8F8;
+  --color-gray-100: #F3F3F3;
+  --color-gray-200: #EDEDED;
+  --color-gray-300: #E2E2E2;
+  --color-gray-400: #C7C7C7;
+  --color-gray-500: #999999;
+  --color-gray-600: #7C7C7C;
+  --color-gray-700: #525252;
+  --color-gray-800: #383838;
+  --color-gray-900: #171717;
+
+  /* Other Colors */
+  --color-orange-600: #D45A08;
+  --color-blue-600: #007BE0;
+  --color-green-600: #278F5E;
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Semantic Surface Colors (Light Theme) */
+  --surface-white: #FFFFFF;
+  --surface-gray-1: #F8F8F8;
+  --surface-gray-2: #F3F3F3;
+  --surface-gray-3: #EDEDED;
+  --surface-gray-4: #E2E2E2;
+  --surface-selected: #F3F3F3;
+  --surface-modal: #FFFFFF;
+
+  /* Semantic Ink/Text Colors */
+  --ink-gray-1: #F3F3F3;
+  --ink-gray-2: #EDEDED;
+  --ink-gray-3: #E2E2E2;
+  --ink-gray-4: #C7C7C7;
+  --ink-gray-5: #999999;
+  --ink-gray-6: #7C7C7C;
+  --ink-gray-7: #525252;
+  --ink-gray-8: #383838;
+  --ink-gray-9: #171717;
+
+  /* Semantic Outline Colors */
+  --outline-gray-1: #EDEDED;
+  --outline-gray-2: #E2E2E2;
+  --outline-gray-3: #C7C7C7;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
+  --sidebar-width: 18rem;
+  --toc-width: 14rem;
+  --header-height: 53px;
+  --content-max-width: 900px;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Prose Colors */
+  --tw-prose-body: var(--ink-gray-8);
+  --tw-prose-headings: var(--ink-gray-9);
+  --tw-prose-links: var(--ink-gray-9);
+  --tw-prose-bold: var(--ink-gray-9);
+  --tw-prose-counters: var(--ink-gray-5);
+  --tw-prose-bullets: var(--ink-gray-4);
+  --tw-prose-hr: var(--outline-gray-1);
+  --tw-prose-quotes: var(--ink-gray-9);
+  --tw-prose-quote-borders: var(--outline-gray-2);
+  --tw-prose-code: var(--ink-gray-9);
+  --tw-prose-pre-code: var(--ink-gray-3);
+  --tw-prose-pre-bg: var(--color-gray-900);
+  --tw-prose-th-borders: var(--outline-gray-2);
+  --tw-prose-td-borders: var(--outline-gray-1);
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+  --surface-white: #111111;
+  --surface-gray-1: #1a1a1a;
+  --surface-gray-2: #242424;
+  --surface-gray-3: #2a2a2a;
+  --surface-gray-4: #333333;
+  --surface-selected: #242424;
+  --surface-modal: #1a1a1a;
+  
+  --ink-gray-1: #242424;
+  --ink-gray-2: #333333;
+  --ink-gray-3: #404040;
+  --ink-gray-4: #666666;
+  --ink-gray-5: #888888;
+  --ink-gray-6: #aaaaaa;
+  --ink-gray-7: #cccccc;
+  --ink-gray-8: #e5e5e5;
+  --ink-gray-9: #f5f5f5;
+  
+  --outline-gray-1: #242424;
+  --outline-gray-2: #333333;
+  --outline-gray-3: #404040;
+}

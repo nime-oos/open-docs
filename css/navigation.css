@@ -1,0 +1,107 @@
+/* Frappe HR Documentation - Previous/Next Navigation */
+
+.page-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--outline-gray-1);
+}
+
+.page-nav-links {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.page-nav-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--outline-gray-1);
+  text-decoration: none;
+  transition: all var(--transition-fast) ease;
+  max-width: 50%;
+  background-color: transparent;
+}
+
+.page-nav-link:hover {
+  border-color: var(--outline-gray-2);
+  background-color: var(--surface-gray-1);
+}
+
+/* Layout for Prev vs Next */
+.page-nav-link.prev {
+  flex-direction: row;
+}
+
+.page-nav-link.next {
+  flex-direction: row;
+  margin-left: auto;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+/* Ensure content stacks properly inside the link */
+.page-nav-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.page-nav-link.next .page-nav-text {
+  align-items: flex-end;
+}
+
+.page-nav-label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--ink-gray-4);
+}
+
+.page-nav-title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-gray-7);
+  transition: color var(--transition-fast) ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.page-nav-link:hover .page-nav-title {
+  color: var(--ink-gray-9);
+}
+
+.page-nav-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--ink-gray-4);
+  flex-shrink: 0;
+  transition: color var(--transition-fast) ease;
+}
+
+.page-nav-link:hover .page-nav-icon {
+  color: var(--ink-gray-6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .page-nav-links {
+    flex-direction: column;
+  }
+  
+  .page-nav-link {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .page-nav-link.next {
+    margin-left: 0;
+  }
+}

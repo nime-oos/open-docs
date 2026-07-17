@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucursal - Frappe HR</title>
+    <meta name="description" content="Documentación de Sucursal para Frappe HR">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/toc.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+      /* Dropdown Technology Menu Styles */
+      .tech-dropdown {
+        position: relative;
+      }
+      .tech-dropdown-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: var(--radius);
+        transition: background-color var(--transition-fast);
+      }
+      .tech-dropdown-btn:hover {
+        background-color: var(--surface-gray-2);
+      }
+      .tech-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 8px;
+        background-color: var(--surface-white);
+        border: 1px solid var(--outline-gray-1);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        min-width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 4px;
+        z-index: 100;
+      }
+      .tech-dropdown-menu.is-open {
+        display: flex;
+      }
+      .tech-dropdown-item {
+        padding: 8px 12px;
+        color: var(--ink-gray-9);
+        text-decoration: none;
+        font-size: var(--text-sm);
+        border-radius: var(--radius-sm);
+      }
+      .tech-dropdown-item:hover {
+        background-color: var(--surface-gray-2);
+      }
+      .search-results-list {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 8px 0;
+      }
+      .search-result-item {
+        display: block;
+        padding: 12px 16px;
+        color: var(--ink-gray-9);
+        text-decoration: none;
+        border-bottom: 1px solid var(--outline-gray-1);
+      }
+      .search-result-item:hover {
+        background-color: var(--surface-gray-1);
+      }
+    </style>
+</head>
+<body>
+    <div class="site-container">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-left tech-dropdown" id="tech-dropdown">
+                <button class="tech-dropdown-btn" id="tech-dropdown-btn">
+                    <div class="header-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 4h14v2H5V4zm0 5h14v2H5V9zm0 5h9v2H5v-2z"/></svg>
+                    </div>
+                    <span class="header-space-name">Frappe HR</span>
+                    <svg class="header-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="tech-dropdown-menu" id="tech-dropdown-menu">
+                    <a href="#" class="tech-dropdown-item">Frappe HR</a>
+                    <a href="python/installation.html" class="tech-dropdown-item">Python Docs</a>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <!-- Navigation -->
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" id="search-btn">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="search-kbd" id="search-shortcut">Ctrl+K</span>
+                </button>
+                <div class="header-divider"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-knob">
+                        <svg id="theme-sun" class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg id="theme-moon" class="theme-icon" style="display:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </div>
+                </button>
+                <div class="header-divider"></div>
+                <a href="https://github.com/JACC34" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+            </div>
+        </header>
+        
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <div class="header-left tech-dropdown">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <button class="tech-dropdown-btn">
+                    <span class="header-space-name">Frappe HR</span>
+                    <svg class="header-chevron" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="tech-dropdown-menu">
+                    <a href="#" class="tech-dropdown-item">Frappe HR</a>
+                    <a href="python/installation.html" class="tech-dropdown-item">Python Docs</a>
+                </div>
+            </div>
+            <button class="search-btn" id="mobile-search-btn">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </button>
+        </header>
+
+        <!-- Main Body -->
+        <div class="site-body">
+            
+            <!-- Left Sidebar -->
+            <aside class="wiki-sidebar" id="mobile-sidebar">
+                <nav class="sidebar-nav">
+                    
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn" data-group-id="intro" aria-expanded="true">
+          <svg class="sidebar-arrow expanded" viewBox="0 0 12 12" fill="currentColor"><path d="M4 8.54V3.46c0-.4.455-.64.787-.41l3.628 2.54a.5.5 0 010 .82L4.787 8.95A.5.5 0 014 8.54z"/></svg>
+          <span class="sidebar-group-title">Introducción</span>
+        </button>
+        <div class="sidebar-children" id="intro-children" style="display: block;">
+          <div class="sidebar-list">
+    
+        <div class="sidebar-item">
+          <a href="introduction.html" class="sidebar-link " data-route="introduction" >
+            <span class="sidebar-link-title">Frappe HR</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="videos.html" class="sidebar-link " data-route="videos" >
+            <span class="sidebar-link-title">Videos</span>
+          </a>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn" data-group-id="mobile" aria-expanded="true">
+          <svg class="sidebar-arrow expanded" viewBox="0 0 12 12" fill="currentColor"><path d="M4 8.54V3.46c0-.4.455-.64.787-.41l3.628 2.54a.5.5 0 010 .82L4.787 8.95A.5.5 0 014 8.54z"/></svg>
+          <span class="sidebar-group-title">Frappe HR Móvil</span>
+        </button>
+        <div class="sidebar-children" id="mobile-children" style="display: block;">
+          <div class="sidebar-list">
+    
+        <div class="sidebar-item">
+          <a href="mobile-app-installation.html" class="sidebar-link " data-route="mobile-app-installation" >
+            <span class="sidebar-link-title">Instalación de App Móvil</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="push-notification.html" class="sidebar-link " data-route="push-notification" >
+            <span class="sidebar-link-title">Notificaciones Push</span>
+          </a>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn" data-group-id="org" aria-expanded="true">
+          <svg class="sidebar-arrow expanded" viewBox="0 0 12 12" fill="currentColor"><path d="M4 8.54V3.46c0-.4.455-.64.787-.41l3.628 2.54a.5.5 0 010 .82L4.787 8.95A.5.5 0 014 8.54z"/></svg>
+          <span class="sidebar-group-title">Gestión de la Organización</span>
+        </button>
+        <div class="sidebar-children" id="org-children" style="display: block;">
+          <div class="sidebar-list">
+    
+        <div class="sidebar-item">
+          <a href="employee.html" class="sidebar-link " data-route="employee" >
+            <span class="sidebar-link-title">Empleado</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employment-type.html" class="sidebar-link " data-route="employment-type" >
+            <span class="sidebar-link-title">Tipo de Empleo</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="branch.html" class="sidebar-link active" data-route="branch" aria-current="page">
+            <span class="sidebar-link-title">Sucursal</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="department.html" class="sidebar-link " data-route="department" >
+            <span class="sidebar-link-title">Departamento</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="designation.html" class="sidebar-link " data-route="designation" >
+            <span class="sidebar-link-title">Designación</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employee-grade.html" class="sidebar-link " data-route="employee-grade" >
+            <span class="sidebar-link-title">Grado del Empleado</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employee-group.html" class="sidebar-link " data-route="employee-group" >
+            <span class="sidebar-link-title">Grupo de Empleados</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employee-health-insurance.html" class="sidebar-link " data-route="employee-health-insurance" >
+            <span class="sidebar-link-title">Seguro de Salud</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="organizational-chart.html" class="sidebar-link " data-route="organizational-chart" >
+            <span class="sidebar-link-title">Organigrama</span>
+          </a>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn" data-group-id="attendance" aria-expanded="true">
+          <svg class="sidebar-arrow expanded" viewBox="0 0 12 12" fill="currentColor"><path d="M4 8.54V3.46c0-.4.455-.64.787-.41l3.628 2.54a.5.5 0 010 .82L4.787 8.95A.5.5 0 014 8.54z"/></svg>
+          <span class="sidebar-group-title">Asistencia</span>
+        </button>
+        <div class="sidebar-children" id="attendance-children" style="display: block;">
+          <div class="sidebar-list">
+    
+        <div class="sidebar-item">
+          <a href="attendance.html" class="sidebar-link " data-route="attendance" >
+            <span class="sidebar-link-title">Asistencia</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employee-attendance-tool.html" class="sidebar-link " data-route="employee-attendance-tool" >
+            <span class="sidebar-link-title">Herramienta de Asistencia</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="attendance-request.html" class="sidebar-link " data-route="attendance-request" >
+            <span class="sidebar-link-title">Solicitud de Asistencia</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="upload-attendance.html" class="sidebar-link " data-route="upload-attendance" >
+            <span class="sidebar-link-title">Subir Asistencia</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="employee-checkin.html" class="sidebar-link " data-route="employee-checkin" >
+            <span class="sidebar-link-title">Check-in de Empleado</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="auto-attendance.html" class="sidebar-link " data-route="auto-attendance" >
+            <span class="sidebar-link-title">Asistencia Automática</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="integrating-frappe-hr-with-bio.html" class="sidebar-link " data-route="integrating-frappe-hr-with-bio" >
+            <span class="sidebar-link-title">Integración Biométrica</span>
+          </a>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn" data-group-id="shift" aria-expanded="true">
+          <svg class="sidebar-arrow expanded" viewBox="0 0 12 12" fill="currentColor"><path d="M4 8.54V3.46c0-.4.455-.64.787-.41l3.628 2.54a.5.5 0 010 .82L4.787 8.95A.5.5 0 014 8.54z"/></svg>
+          <span class="sidebar-group-title">Gestión de Turnos</span>
+        </button>
+        <div class="sidebar-children" id="shift-children" style="display: block;">
+          <div class="sidebar-list">
+    
+        <div class="sidebar-item">
+          <a href="shift-management.html" class="sidebar-link " data-route="shift-management" >
+            <span class="sidebar-link-title">Gestión de Turnos</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="shift-type.html" class="sidebar-link " data-route="shift-type" >
+            <span class="sidebar-link-title">Tipo de Turno</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="shift-location.html" class="sidebar-link " data-route="shift-location" >
+            <span class="sidebar-link-title">Ubicación de Turno</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="shift-request.html" class="sidebar-link " data-route="shift-request" >
+            <span class="sidebar-link-title">Solicitud de Turno</span>
+          </a>
+        </div>
+      
+        <div class="sidebar-item">
+          <a href="shift-assignment.html" class="sidebar-link " data-route="shift-assignment" >
+            <span class="sidebar-link-title">Asignación de Turno</span>
+          </a>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    
+                </nav>
+            </aside>
+            <div class="mobile-sidebar-overlay" id="mobile-overlay"></div>
+
+            <!-- Main Content -->
+            <main class="wiki-main">
+                <article class="wiki-article">
+                    
+                    <div class="page-header">
+                        <h1 class="page-title" id="page-title">Sucursal</h1>
+                    </div>
+
+                    <div class="wiki-content prose prose-sm max-w-none scroll-smooth" id="wiki-content">
+                        
+      <p>Este es contenido de marcador de posición para la página <strong>Sucursal</strong>.</p>
+      <h2 id="section-1">Sección 1</h2>
+      <p>Detalles sobre Sucursal van aquí.</p>
+    
+                    </div>
+
+                    <!-- Previous/Next Navigation -->
+                    <nav class="page-nav">
+                        <div class="page-nav-links">
+                            
+      <a href="employment-type.html" class="page-nav-link prev">
+        <svg class="page-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        <div class="page-nav-text">
+          <span class="page-nav-label">Página Anterior</span>
+          <span class="page-nav-title">Tipo de Empleo</span>
+        </div>
+      </a>
+    
+                            
+      <a href="department.html" class="page-nav-link next">
+        <div class="page-nav-text">
+          <span class="page-nav-label">Página Siguiente</span>
+          <span class="page-nav-title">Departamento</span>
+        </div>
+        <svg class="page-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+    
+                        </div>
+                    </nav>
+                    
+                </article>
+            </main>
+
+            <!-- Right Sidebar TOC -->
+            <aside class="wiki-toc">
+                <nav class="toc-sidebar">
+                    <h3 class="toc-title">En esta página</h3>
+                    <ul class="toc-list" id="wiki-toc-list">
+                        <!-- Populated by JavaScript -->
+                    </ul>
+                </nav>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal-overlay" id="search-overlay">
+        <div class="search-modal" id="search-modal">
+            <div class="search-header">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar documentación...">
+                <button class="search-close" id="search-close">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="search-results-list" id="search-results">
+            </div>
+            <div class="search-results-empty" id="search-empty">
+                Escribe para buscar...
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script>
+      window.SEARCH_DATA = [{"title": "Frappe HR", "route": "introduction.html"}, {"title": "Videos", "route": "videos.html"}, {"title": "Instalaci\u00f3n de App M\u00f3vil", "route": "mobile-app-installation.html"}, {"title": "Notificaciones Push", "route": "push-notification.html"}, {"title": "Empleado", "route": "employee.html"}, {"title": "Tipo de Empleo", "route": "employment-type.html"}, {"title": "Sucursal", "route": "branch.html"}, {"title": "Departamento", "route": "department.html"}, {"title": "Designaci\u00f3n", "route": "designation.html"}, {"title": "Grado del Empleado", "route": "employee-grade.html"}, {"title": "Grupo de Empleados", "route": "employee-group.html"}, {"title": "Seguro de Salud", "route": "employee-health-insurance.html"}, {"title": "Organigrama", "route": "organizational-chart.html"}, {"title": "Asistencia", "route": "attendance.html"}, {"title": "Herramienta de Asistencia", "route": "employee-attendance-tool.html"}, {"title": "Solicitud de Asistencia", "route": "attendance-request.html"}, {"title": "Subir Asistencia", "route": "upload-attendance.html"}, {"title": "Check-in de Empleado", "route": "employee-checkin.html"}, {"title": "Asistencia Autom\u00e1tica", "route": "auto-attendance.html"}, {"title": "Integraci\u00f3n Biom\u00e9trica", "route": "integrating-frappe-hr-with-bio.html"}, {"title": "Gesti\u00f3n de Turnos", "route": "shift-management.html"}, {"title": "Tipo de Turno", "route": "shift-type.html"}, {"title": "Ubicaci\u00f3n de Turno", "route": "shift-location.html"}, {"title": "Solicitud de Turno", "route": "shift-request.html"}, {"title": "Asignaci\u00f3n de Turno", "route": "shift-assignment.html"}];
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>
