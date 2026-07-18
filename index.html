@@ -1,11 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=introduction.html">
-    <title>Redirecting to Frappe HR Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nime Open Docs - Inicio</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <style>
+        body {
+            background-color: var(--surface-bg);
+            color: var(--ink-gray-9);
+            font-family: var(--font-sans);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+        
+        .landing-header {
+            padding: 24px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .landing-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .landing-logo {
+            width: 120px;
+            height: 120px;
+            color: var(--color-green-600);
+            margin-bottom: 24px;
+        }
+
+        .landing-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--color-green-500) 0%, var(--color-green-700) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .landing-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-gray-6);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        .landing-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 99px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            background-color: var(--color-green-600);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-green-700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.23);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface-white);
+            color: var(--ink-gray-9);
+            border: 1px solid var(--outline-gray-2);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--surface-gray-2);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--ink-gray-6);
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--surface-gray-2);
+            color: var(--ink-gray-9);
+        }
+        
+        .tech-dropdown { position: relative; display: inline-block; }
+        .tech-dropdown-menu { 
+            position: absolute; 
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            margin-top: 16px; 
+            background-color: var(--surface-white); 
+            border: 1px solid var(--outline-gray-1); 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-xl); 
+            min-width: 260px; 
+            display: none; 
+            flex-direction: column; 
+            padding: 8px; 
+            z-index: 100; 
+            text-align: left;
+        }
+        .tech-dropdown.is-open .tech-dropdown-menu { display: flex; }
+        .tech-dropdown-item { 
+            padding: 12px 16px; 
+            color: var(--ink-gray-9); 
+            text-decoration: none; 
+            font-size: 1rem; 
+            border-radius: 8px; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background-color var(--transition-fast);
+        }
+        .tech-dropdown-item:hover { background-color: var(--surface-gray-2); }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="introduction.html">link to the Introduction</a>.</p>
+    <header class="landing-header">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <svg id="theme-sun" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg id="theme-moon" width="24" height="24" style="display:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+    </header>
+
+    <main class="landing-main">
+        <svg class="landing-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+        </svg>
+        
+        <h1 class="landing-title">Nime Open Docs</h1>
+        <p class="landing-subtitle">El centro neurálgico de documentación técnica. Accede a todos los recursos, guías y manuales de nuestras tecnologías en un solo lugar impulsado por una arquitectura ultra rápida.</p>
+        
+        <div class="landing-buttons">
+            <a href="all.html" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Documentación Completa
+            </a>
+            
+            <div class="tech-dropdown" id="landing-dropdown">
+                <button class="btn btn-secondary" onclick="document.getElementById('landing-dropdown').classList.toggle('is-open')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Tecnología Específica
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+                </button>
+                <div class="tech-dropdown-menu" id="landing-menu">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/technologies.js"></script>
+    <script>
+        // Inject technologies into dropdown
+        const menu = document.getElementById('landing-menu');
+        let html = '';
+        if (window.TECHNOLOGIES) {
+            window.TECHNOLOGIES.forEach(tech => {
+                html += `<a href="docs.html?tech=${tech.id}" class="tech-dropdown-item">
+                    <span style="display:flex; width:20px; justify-content:center; color:var(--color-green-600);">${tech.logo || ''}</span>
+                    ${tech.title}
+                </a>`;
+            });
+        }
+        menu.innerHTML = html;
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('landing-dropdown');
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('is-open');
+            }
+        });
+
+        // Theme toggle logic (copied from app.js)
+        const themeBtn = document.getElementById('theme-toggle');
+        const sun = document.getElementById('theme-sun');
+        const moon = document.getElementById('theme-moon');
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                sun.style.display = 'none';
+                moon.style.display = 'block';
+            } else {
+                sun.style.display = 'block';
+                moon.style.display = 'none';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            setTheme(current);
+        });
+    </script>
 </body>
 </html>
