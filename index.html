@@ -161,17 +161,76 @@
     </header>
 
     <main class="landing-main">
-        <svg class="landing-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
-        </svg>
+        <svg class="landing-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <style>
+      /* Main Green Color from the design */
+      .main-color { fill: #206E43; }
+      .stroke-color { 
+        stroke: #206E43; 
+        stroke-width: 14; 
+        stroke-miterlimit: 10; 
+        stroke-linecap: round; 
+        stroke-linejoin: round;
+      }
+      .text { 
+        font-family: "Montserrat", "Segoe UI", -apple-system, sans-serif; 
+        font-weight: 800; 
+        font-size: 24px; 
+        fill: #206E43; 
+        letter-spacing: 2px; 
+        text-anchor: middle; 
+      }
+      .node { fill: #206E43; }
+      .line { 
+        stroke: #206E43; 
+        stroke-width: 4; 
+        stroke-linecap: round; 
+      }
+    </style>
+  </defs>
+  
+  <g transform="translate(210, 80)">
+    <path class="stroke-color" fill="none" d="M80,50 C40,50 10,70 10,100 C10,130 40,150 80,150 L120,135" />
+    <path class="stroke-color" fill="none" d="M120,335 C80,350 50,370 50,400 C50,430 80,450 120,450 L80,450" />
+    <path class="stroke-color" fill="none" d="M80,50 L220,-5 L220,295 L80,350 Z" />
+    <polygon class="main-color" points="90,145 150,120 150,320 90,345" />
+    <polygon class="main-color" points="90,145 250,310 310,290 150,100" />
+    <polygon class="main-color" points="260,65 320,40 320,285 260,310" />
+    <path class="stroke-color" fill="none" d="M320,40 L380,20 L380,240 C380,280 330,295 320,285" />
+    <path class="main-color" fill-rule="evenodd" d="M290,95 L360,70 L360,250 C360,270 310,280 290,280 Z M310,120 L310,250 C325,245 340,235 340,225 L340,105 Z" />
+    <line class="stroke-color" stroke-width="8" x1="120" y1="80" x2="190" y2="55" />
+    <line class="stroke-color" stroke-width="8" x1="120" y1="105" x2="170" y2="85" />
+    <line class="stroke-color" stroke-width="8" x1="130" y1="330" x2="200" y2="305" />
+    <g>
+      <line class="line" x1="180" y1="150" x2="240" y2="130" />
+      <line class="line" x1="240" y1="130" x2="270" y2="180" />
+      <line class="line" x1="270" y1="180" x2="220" y2="210" />
+      <line class="line" x1="220" y1="210" x2="180" y2="150" />
+      <line class="line" x1="180" y1="150" x2="150" y2="200" />
+      <line class="line" x1="150" y1="200" x2="180" y2="240" />
+      <line class="line" x1="220" y1="210" x2="180" y2="240" />
+      <line class="line" x1="270" y1="180" x2="310" y2="160" />
+      <line class="line" x1="220" y1="210" x2="250" y2="260" />
+      <circle class="node" cx="180" cy="150" r="10" />
+      <circle class="node" cx="240" cy="130" r="12" />
+      <circle class="node" cx="270" cy="180" r="14" />
+      <circle class="node" cx="220" cy="210" r="11" />
+      <circle class="node" cx="150" cy="200" r="8" />
+      <circle class="node" cx="180" cy="240" r="10" />
+      <circle class="node" cx="310" cy="160" r="7" />
+      <circle class="node" cx="250" cy="260" r="9" />
+    </g>
+  </g>
+</svg>
         
         <h1 class="landing-title">Nime Open Docs</h1>
         <p class="landing-subtitle">El centro neurálgico de documentación técnica. Accede a todos los recursos, guías y manuales de nuestras tecnologías en un solo lugar impulsado por una arquitectura ultra rápida.</p>
         
         <div class="landing-buttons">
-            <a href="all.html" class="btn btn-primary">
+            <a href="docs.html" class="btn btn-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                Documentación Completa
+                Empezar a Leer
             </a>
             
             <div class="tech-dropdown" id="landing-dropdown">

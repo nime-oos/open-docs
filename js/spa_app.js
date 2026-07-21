@@ -32,11 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             ${tech.title}
         </a>`;
     });
-    dropdownHTML += `
-        <hr style="margin: 4px 0; border-color: var(--outline-gray-1);">
-        <a href="all.html" class="tech-dropdown-item" style="color: var(--color-green-600); font-weight: 600;">Todo en Uno</a>
-        </div>
-    `;
+    dropdownHTML += `</div>`;
     
     const drop1 = document.getElementById('spa-dropdown-container');
     const drop2 = document.getElementById('spa-mobile-dropdown-container');
@@ -61,14 +57,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    const pageRoute = currentPage + '.html';
-    if (!config.contents[pageRoute] && allPages.length > 0) {
-        currentPage = allPages[0].route.replace('.html', '');
+    let currentRoute = currentPage + '.html';
+    if (currentPage !== 'all') {
+        const pageRoute = currentPage + '.html';
+        if (!config.contents[pageRoute] && allPages.length > 0) {
+            currentPage = allPages[0].route.replace('.html', '');
+            currentRoute = currentPage + '.html';
+        }
     }
-    const currentRoute = currentPage + '.html';
 
     // Build Sidebar
-    let sidebarHTML = '';
+        let sidebarHTML = `
+      <div style="padding: 12px 16px 20px 16px; border-bottom: 1px solid var(--outline-gray-1); margin-bottom: 16px;">
+        <a href="?tech=${currentTech}&page=all" class="btn btn-secondary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 0.875rem; padding: 10px 16px; border-radius: 8px; background-color: var(--surface-gray-1);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Vista Continua
+        </a>
+      </div>
+    `;
     config.sidebar.forEach(group => {
         sidebarHTML += `
           <div class="sidebar-group">
@@ -108,10 +117,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Content
-    const pageData = config.contents[currentRoute] || { title: 'No encontrado', content: '<p>Página no encontrada.</p>' };
-    document.title = `${pageData.title} - ${config.title}`;
-    document.getElementById('page-title').innerText = pageData.title;
-    document.getElementById('wiki-content').innerHTML = pageData.content;
+    if (currentPage === 'all') {
+        document.title = `Todo en Uno - ${config.title}`;
+        document.getElementById('page-title').innerText = `Manual Completo: ${config.title}`;
+        
+        let allContentHTML = '';
+        for (const route in config.contents) {
+            const pageData = config.contents[route];
+            const pageId = route.replace('.html', '');
+            allContentHTML += `
+            <div id="${pageId}" style="padding-top: 20px;">
+                <h2 style="color: var(--color-green-600); border-bottom: 1px solid var(--outline-gray-1); padding-bottom: 8px; margin-top: 40px;">${pageData.title}</h2>
+                ${pageData.content}
+            </div>
+            `;
+        }
+        document.getElementById('wiki-content').innerHTML = allContentHTML;
+    } else {
+        const pageData = config.contents[currentRoute] || { title: 'No encontrado', content: '<p>Página no encontrada.</p>' };
+        document.title = `${pageData.title} - ${config.title}`;
+        document.getElementById('page-title').innerText = pageData.title;
+        document.getElementById('wiki-content').innerHTML = pageData.content;
+    }
 
     // Prev / Next Nav
     const currentIndex = allPages.findIndex(p => p.route === currentRoute);
@@ -124,7 +151,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const next = allPages[currentIndex + 1];
         navHTML += `<a href="?tech=${currentTech}&page=${next.route.replace('.html','')}" class="page-nav-link next"><div class="page-nav-text"><span class="page-nav-label">Siguiente</span><span class="page-nav-title">${next.title}</span></div><svg class="page-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>`;
     }
-    document.getElementById('spa-nav-links').innerHTML = navHTML;
+    document.getElementById('spa-nav-links').innerHTML = currentPage === 'all' ? '' : navHTML;
 
     window.dispatchEvent(new Event('spa-content-loaded'));
 });
